@@ -13,7 +13,7 @@ tools.
 1. - Install [PyCharm community version](https://www.jetbrains.com/pycharm/download/#section=windows)
    - create a GitHub account if needed and send Aaron the username,
    - install [Anaconda](https://www.anaconda.com/products/individual#Downloads)
-1. Schedule time with Aaron to set up PyCharm. 
+1. Schedule time with Aaron to set up PyCharm and review GitHub repo.
    
 
 ## Background
@@ -170,6 +170,7 @@ immediately if our change had unexpected consequences.
 - fill in background on project
   
 - find the best way to store data that can be synced across
-  machines but not to GitHub. (git large files storage?)
+  machines but not to GitHub. 
+  (git [large files storage](https://git-lfs.github.com/)?)
   
 - input major tasks as GitHub issues
