@@ -164,6 +164,8 @@ immediately if our change had unexpected consequences.
 
 ## Major ToDos
 - finish programming outline
+
+- add project by-week timeline
       
 - find the best way to store data that can be synced across
   machines but not to GitHub. 
