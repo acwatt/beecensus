@@ -165,12 +165,10 @@ immediately if our change had unexpected consequences.
 ## Major ToDos
 - finish programming outline
       
-- set up directory structure
-
-- fill in background on project
-  
 - find the best way to store data that can be synced across
   machines but not to GitHub. 
   (git [large files storage](https://git-lfs.github.com/)?)
   
 - input major tasks as GitHub issues
+
+- decide on database structure
