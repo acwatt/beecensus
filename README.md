@@ -6,13 +6,25 @@ the basics with GitHub and PyCharm together, we will mostly be
 focusing on writing the code and getting familiar with the GitHub 
 tools. 
 
-**First Steps**:
-1. Read through this document.
+## First Steps:
+1. Read about [object detection](https://www.datacamp.com/community/tutorials/object-detection-guide).
+   
+1. Finish reading through this document.
+   
 1. Skim [Ryan Kellogg's RA manual](https://github.com/kelloggrk/Kellogg_RA_Manual/wiki/Overview)
    (focus on the Project Management section).
-1. - Install [PyCharm community version](https://www.jetbrains.com/pycharm/download/#section=windows)
-   - create a GitHub account if needed and send Aaron the username,
-   - install [Anaconda](https://www.anaconda.com/products/individual#Downloads)
+   
+1. If you haven't used Git before, read [this article](https://www.freecodecamp.org/news/learn-the-basics-of-git-in-under-10-minutes-da548267cc91/)
+   or something similar. Make a practice repo and try commiting, pushing, 
+   pulling, and branching. PyCharm makes it easier to do these, but you 
+   should understand how these basic commands work.
+   
+1. - install [Anaconda](https://www.
+   anaconda.com/products/individual#Downloads)
+   - Install [PyCharm community version](https://www.jetbrains.com/pycharm/download/#section=windows)
+   - create a GitHub account if needed and send Aaron the username so he 
+     can add you as a collaborator on the repository
+   
 1. Schedule time with Aaron to set up PyCharm and review GitHub repo.
    
 
