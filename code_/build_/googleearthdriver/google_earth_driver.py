@@ -67,7 +67,11 @@ def get_window():
     sleep(2)
     # Get main window
     window = app.window(title_re=".*Google Earth Pro.*")
-    #TODO: select search textbox and enter locations
+
+    # TODO: select search textbox and enter locations
+    # can click if we find the right place: app['Google Earth Pro']['widgetWindow'].click()
+    # can print list of controls: app['Google Earth Pro'].print_control_identifiers()
+
     # print("Application windows:")
     # print(app.windows())
     pass
