@@ -200,7 +200,8 @@ every time we make a change to the code, so we will know
 immediately if our change had unexpected consequences.
 
 ## Major ToDos
-- finish programming outline
+- finish programming outline (don't think object classification will be 
+  useful here).
 
 - add project by-week timeline
       
