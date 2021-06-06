@@ -166,9 +166,10 @@ Phase 4: Apply process to US.
 
 | Phase.Step | Description |
 |------|-------------|
-| 1.1 | Setup: build apiary characteristic database, setup unit tests.  |
-| 1.2 |  |
-
+| 1.1 | Setup GitHub: start repo, input project issues, add collaborators. |
+| 1.2 | Collect some test images: get 10 high-altitude images that do and do not contain apiaries. Demo point-and-click code from Robin Kiff. |
+| 1.3 | ML Model Selection: decide which ML model to use in high-altitude filter. May need to test on test images, may need to collect more test images or make new images with rotations and translation of already gathered images. |
+| 1.4 | Setup: build apiary characteristic database, setup unit tests. |
 
 ## Glossary
 | Term   | Description |
