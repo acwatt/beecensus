@@ -103,8 +103,9 @@ Some main style points:
     trained).
   - Geopandas for converting geographical shape files into list of latitude 
     and longitude coordinates for downloading images.
-  - Code written by [name] to download images from google earth at all 
-    available dates for that location
+  - [Code written by Robin Kiff](https://bitbucket.org/demandlinkdevelopment/beehunter/src/master/)
+    to download images from google earth at all available dates for that
+    location
     
 - barcode code written by [name] to add covariate barcodes to images. This 
   adds a barcode version of the time, location, geography, etc. to allow 
