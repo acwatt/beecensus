@@ -177,6 +177,7 @@ Phase 4: Apply process to US.
 | Apiary | a group of managed bee boxes |
 | Unit test | testing the smallest piece of code that can be logically isolated in a system using the smallest set of data to produce a valid result. Often a unit test will be set up as a test of a function, where the input is a single piece of data (e.g., an image) and the output is tested against what we know the output should be. See the Unit Testing section for more.|
 | ML | Machine Learning |
+| Object Identifier | an ML model to identify objects in an image. Can be use to identify one or many different types of objects and one or many objects of a any type.
 | Classifier | an ML model to classify an image into one of several categories. In this project, we will train a binary classifier to tell us if there is (or is not) any bee boxes in an aerial image. |
 
 
