@@ -73,6 +73,15 @@ it speeds up communication and production in major ways. Within code,
 we can use `TODO:` comments to leave ourselves notes on what is left
 to do in a specific script.
 
+**Atomic commits**: A single commit should only contain a small change (e.g.
+, "updated log in `this_function` to save more information about the 
+process"). Do not mix different tasks into the same commit because it will 
+cause issues if one of those tasks and not the other needs to be reverted. 
+You can make edits to multiple parts of the code and PyCharm can help you 
+choose which edits you would like to commit. It's easiest though to focus 
+on one task at a time if possible and commit the edits when that task is 
+complete.
+
 ### Python Programming Standards
 When possible, we'll try to follow the [PEP-8 python style guide](https://pep8.org/).
 PEP-8 offers a way to make sure our code is reasonably
