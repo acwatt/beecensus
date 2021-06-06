@@ -19,8 +19,7 @@ tools.
    pulling, and branching. PyCharm makes it easier to do these, but you 
    should understand how these basic commands work.
    
-1. - install [Anaconda](https://www.
-   anaconda.com/products/individual#Downloads)
+1. - install [Anaconda](https://www.anaconda.com/products/individual#Downloads)
    - Install [PyCharm community version](https://www.jetbrains.com/pycharm/download/#section=windows)
    - create a GitHub account if needed and send Aaron the username so he 
      can add you as a collaborator on the repository
