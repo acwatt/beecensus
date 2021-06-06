@@ -64,7 +64,7 @@ Borrowing ideas from [Ryan Kellogg's RA manual](https://github.com/kelloggrk/Kel
 
 1. *Unambiguous process*: Keeping GitHub issues up to date 
    and folders free of half-finished or legacy files.
-   
+
 ### GitHub & PyCharm
 We will use GitHub issues to keep track of tasks (as layed out
 in Kellogg's RA Manual) and branching, commits, and comments on 
@@ -150,7 +150,7 @@ Some main style points:
 1. Save bee box and apiary characteristics to database.
 
 ![3 CNN process](assets/images/3CNN-process.png)
-   
+
 ## Programming Outline
 Phase 1: Using as few data points as possible, build entire 
    process, end-to-end. 
@@ -168,11 +168,8 @@ Phase 4: Apply process to US.
 |------|-------------|
 | 1.1 | Setup: build apiary characteristic database, setup unit tests.  |
 | 1.2 |  |
-| 1.3 |  |
-| 1.2 |  |
-| 1.2 |  |
 
-  
+
 ## Glossary
 | Term   | Description |
 |---------|-------------|
