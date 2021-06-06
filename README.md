@@ -112,17 +112,22 @@ Some main style points:
   the ojbect identification
 
 ## Application Procedure
-1. Select extent (geometric boundaries) of area to search.
+1. Select geographic boundaries (latitude and longitude) of area to search. 
+   We can do this by saving the boundaries of all counties and states in 
+   files and selecting which counties and/or states to search.
    
 1. Reduce search area by removing some USDA land types that are
-   unlikely to have bee boxes on them using GIS software, 
-   driven by python.
+   unlikely to have bee boxes on them using geopandas or GIS software 
+   driven by python
    
 1. Search remaining area by cutting into 1200'x1200' (or larger)
    images.
 
-1. Download 1200'x1200' images (in batches or entirely depending
-   on storage space).
+1. Download 1200'x1200' images centered on a lat-lon location from google
+   Earth (in batches or all together depending on storage space). We will want
+   to download all images available for that location with our chosen date
+   range. Perhaps there is info in the metadata about the resolution of the 
+   image and we can use that to filter out too low resolution images?
    
 1. (ML1) Apply a binary classifier to each 1200'x1200' image
    to check for the presence of bee boxes (returns: True/False).
