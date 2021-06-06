@@ -42,6 +42,7 @@ using free or low-cost satellite imagery and machine learning tools.
 - Build a dataset of honey bee box locations and apiary
   characteristics for the US using satellite imagery and several
   machine learning tools.
+  
 - Use the dataset to estimate statistics of the apiary and
   box distributions (e.g., county and state estimates).
 
@@ -68,7 +69,7 @@ Borrowing ideas from [Ryan Kellogg's RA manual](https://github.com/kelloggrk/Kel
 We will use GitHub issues to keep track of tasks (as layed out
 in Kellogg's RA Manual) and branching, commits, and comments on 
 commits to communicate. This may sound like a lot to learn but
-speeds up communication and production in major ways. Within code,
+it speeds up communication and production in major ways. Within code,
 we can use `TODO:` comments to leave ourselves notes on what is left
 to do in a specific script.
 
