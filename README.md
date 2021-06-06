@@ -98,6 +98,18 @@ Some main style points:
   for tips on in-line comments.
 
 
+## Tools being used
+- python
+  - TensorFlow library for machine learning models (some new, some already 
+    trained).
+  - Geopandas for converting geographical shape files into list of latitude 
+    and longitude coordinates for downloading images.
+  - Code written by [name] to download images from google earth at all 
+    available dates for that location
+    
+- barcode code written by [name] to add covariate barcodes to images. This 
+  adds a barcode version of the time, location, geography, etc. to allow 
+  the ojbect identification
 
 ## Application Procedure
 1. Select extent (geometric boundaries) of area to search.
