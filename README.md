@@ -152,8 +152,8 @@ Some main style points:
 ![3 CNN process](assets/images/3CNN-process.png)
 
 ## Programming Outline
-Phase 1: Using as few data points as possible, build entire 
-   process, end-to-end. 
+Phase 1: Using as few images as possible, build entire 
+   process, end-to-end. Test edge cases.
 
 Phase 2: Apply process to a county in Pennsylvania (or other 
    state with a lot of ground truth data available from BIP). 
