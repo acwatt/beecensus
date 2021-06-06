@@ -212,3 +212,10 @@ immediately if our change had unexpected consequences.
 - input major tasks as GitHub issues
 
 - decide on database structure
+
+
+## Satellite Imagery
+**Pennsylvania**: [PEMA Orthoimagery Color (1/2ft)](https://www.pasda.psu.edu/uci/SearchResults.aspx?Keyword=PEMA+Orthos)
+
+**Google Earth**: Seems of equal quality, and we already have the 
+point-and-click code to use it over multiple years.
