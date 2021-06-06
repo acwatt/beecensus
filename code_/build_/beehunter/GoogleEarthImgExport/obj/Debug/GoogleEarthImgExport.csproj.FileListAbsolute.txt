@@ -1,0 +1,6 @@
+C:\Users\RobinKiff\source\repos\GoogleEarthImgExport\GoogleEarthImgExport\bin\Debug\GoogleEarthImgExport.exe.config
+C:\Users\RobinKiff\source\repos\GoogleEarthImgExport\GoogleEarthImgExport\bin\Debug\GoogleEarthImgExport.exe
+C:\Users\RobinKiff\source\repos\GoogleEarthImgExport\GoogleEarthImgExport\bin\Debug\GoogleEarthImgExport.pdb
+C:\Users\RobinKiff\source\repos\GoogleEarthImgExport\GoogleEarthImgExport\obj\Debug\GoogleEarthImgExport.csprojAssemblyReference.cache
+C:\Users\RobinKiff\source\repos\GoogleEarthImgExport\GoogleEarthImgExport\obj\Debug\GoogleEarthImgExport.exe
+C:\Users\RobinKiff\source\repos\GoogleEarthImgExport\GoogleEarthImgExport\obj\Debug\GoogleEarthImgExport.pdb
