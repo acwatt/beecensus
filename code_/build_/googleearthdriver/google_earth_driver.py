@@ -71,7 +71,38 @@ def get_window():
     # Sleep while the application opens
     sleep(2)
     # Get main window
-    window = app.window(title_re=".*Google Earth Pro.*")
+    dlg = app.window(title_re=".*Google Earth Pro.*")
+    sleep(1)
+
+
+    data = [[44.90602112, -93.89472961],
+        [44.9357, -93.802742],
+        [45.579415, -122.885045],
+        [43.96575165, -97.69973755]]
+    first = True
+    for [lat, lon] in data:
+        enter_latlon(dlg, lat, lon, first=first)
+        save_image()
+        first = False
+        sleep(1)
+
+    print('done?')
+    # Enter Search Box
+    dlg.type_keys("%{DOWN}{ESC 2}{DOWN 2}^a 44.90602112, -93.89472961 {ENTER}")
+    sleep(4)
+
+
+
+    # dlg.print_control_identifiers(depth=2)
+    test = dlg['main_stack_Window']
+    # LeftPanelVSplitterWindow
+    sleep(1)
+    test.draw_outline()
+
+    main_win_wrapper = dlg.set_focus()  # not needed if this is already in focus (needed during debug)
+
+
+
 
 def print_children(dlg, element, depth):
     """Recursively print out this element and all it's children, grandchildren, etc."""
