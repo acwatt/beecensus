@@ -114,4 +114,24 @@ https://stackoverflow.com/questions/13067686/search-files-in-all-drives-using-py
 
 pywinauto doc:
 https://pywinauto.readthedocs.io/en/latest/controls_overview.html
+
+pywinauto element methods:
+    .draw_outline()
+    .element_info.name
+    .set_focus()
+    .type_keys('')
+    dlg.children()[1].children()[0].children()[1].set_focus()
+    control_type='Edit', visible_only=False
+    draw_tree(dlg)
+    dlg.child_window(handle=1048580)
+
+
+
+Could not find any element that is a text box (in fact, no buttons or anything)
+Must have been hidden in some way by the developers
+    search_box = dlg.child_window(title='', control_type="Edit", visible_only=False)
+    search = dlg.child_window(title_re="search",
+                                    depth=3)  # search only for 1 level below
+                                    
+    dlg.child_window(control_type='Edit', top_level_only=False, visible_only=False).element_info.name
 """
