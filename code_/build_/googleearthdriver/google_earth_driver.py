@@ -20,6 +20,10 @@ from time import sleep
 
 
 # FUNCTIONS --------------------------
+def connect_ge():
+    app = Application().connect(title_re=".*Google Earth Pro.*")
+    return app
+
 def start_ge():
     """Start Google Earth Engine, return running application"""
     ## Find the path to the Google Earth Pro executable
