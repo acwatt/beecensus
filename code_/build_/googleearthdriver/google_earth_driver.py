@@ -6,6 +6,7 @@
 
 # Standard library imports
 from pywinauto.application import Application
+from pywinauto.base_wrapper import ElementNotVisible
 import pywinauto.mouse as mouse
 import pywinauto.keyboard as keyboard
 from pathlib import Path
