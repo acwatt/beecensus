@@ -73,13 +73,27 @@ def get_window():
     # Get main window
     window = app.window(title_re=".*Google Earth Pro.*")
 
-    # TODO: select search textbox and enter locations
-    # can click if we find the right place: app['Google Earth Pro']['widgetWindow'].click()
-    # can print list of controls: app['Google Earth Pro'].print_control_identifiers()
+def print_children(dlg, element, depth):
+    """Recursively print out this element and all it's children, grandchildren, etc."""
+    print('|','---|'*depth,
+          element.element_info.name,
+          element.element_info.handle,
+          element.element_info.control_type)
+    if len(element.children())>0:
+        for child in element.children(visible_only=False):
+            print_children(dlg, child, depth+1)
 
-    # print("Application windows:")
-    # print(app.windows())
-    pass
+
+def draw_tree(dlg):
+    """Prints out tree of elements for application dlg"""
+    for element in dlg.children(visible_only=False):
+        print_children(dlg, element, 0)
+
+def enter_latlon(dlg, lat, lon, first=False):
+    if first:
+        dlg.type_keys('^f+{TAB 9} ^a %s, %s {ENTER}'%(lat, lon))
+    else:
+        dlg.type_keys('^f+{TAB 18} ^a %s, %s {ENTER}'%(lat, lon))
 
 
 
