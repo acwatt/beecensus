@@ -103,8 +103,6 @@ def get_window():
     main_win_wrapper = dlg.set_focus()  # not needed if this is already in focus (needed during debug)
 
 
-
-
 def print_children(dlg, element, depth):
     """Recursively print out this element and all it's children, grandchildren, etc."""
     print('|','---|'*depth,
@@ -116,18 +114,37 @@ def print_children(dlg, element, depth):
             print_children(dlg, child, depth+1)
 
 
-def draw_tree(dlg):
-    """Prints out tree of elements for application dlg"""
+def draw_tree(dlg: Application.window):
+    """Prints out tree of elements for application dlg
+
+    :param dlg:
+    """
     for element in dlg.children(visible_only=False):
         print_children(dlg, element, 0)
 
-def enter_latlon(dlg, lat, lon, first=False):
+def enter_latlon(dlg: Application.window, lat: float, lon: float, first: bool=False) -> object:
+    """Types the lat-lon location into GE and executes the location change.
+
+    :param dlg:
+    :param lat:
+    :param lon:
+    :param first:
+    """
     if first:
         dlg.type_keys('^f+{TAB 9} ^a %s, %s {ENTER}'%(lat, lon))
     else:
         dlg.type_keys('^f+{TAB 18} ^a %s, %s {ENTER}'%(lat, lon))
 
 
+def change_image_resolution(pixel_width: int, pixel_length: int):
+    """Change the window size to change saving image resolution to pixel_width
+    by pixel_length.
+
+    :param pixel_width: desired width of export image in pixels
+    :param pixel_length: desired length of export image in pixels
+    """
+    x, y = pixel_width, pixel_length
+    pass
 
 # MAIN -------------------------------
 if __name__ == "__main__":
