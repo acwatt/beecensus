@@ -21,6 +21,7 @@ from time import sleep
 
 
 # FUNCTIONS --------------------------
+# TODO: make into a class, using these as methods
 def connect_ge():
     app = Application().connect(title_re=".*Google Earth Pro.*")
     return app
