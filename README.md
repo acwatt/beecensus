@@ -133,6 +133,15 @@ Some main style points:
    to check for the presence of bee boxes (returns: True/False).
    If an image is identified to have bee boxes, pass image to 
    ML2; skip otherwise.
+   
+   *Update: Classification models do not report to do well on small objects,
+   but modified object detection Faster R-CNN models seem to be the 
+   standard in small-object detection (Yun et al., 2018). So seems that we 
+   might combine this and the next step.*
+   
+   Alternatively, we could chop the larger image into smaller sections and 
+   feed that to the binary classifier. We would need to encode the math to 
+   calculate the lat-lon of each smaller image.
 
 1. (ML2) Apply an object identifier to the image to find the
    group of bee boxes in 1200'x1200' image (returns: bounding 
@@ -153,11 +162,11 @@ Some main style points:
 
 ## Programming Outline
 Phase 1: Using as few images as possible, build entire 
-   process, end-to-end. Test edge cases.
+   process, end-to-end. Create training data and test edge cases.
 
 Phase 2: Apply process to a county in Pennsylvania (or other 
    state with a lot of ground truth data available from BIP). 
-   Train more and make corrections.
+   Create more training data, train on more images, and make corrections. 
 
 Phase 3: Apply process to Pennsylvania (or whichever state we 
    choose).
@@ -167,7 +176,7 @@ Phase 4: Apply process to US.
 | Phase.Step | Description |
 |------|-------------|
 | 1.1 | Setup GitHub: start repo, input project issues, add collaborators. |
-| 1.2 | Collect some test images: get 10 high-altitude images that do and do not contain apiaries. Demo point-and-click code from Robin Kiff. |
+| 1.2 | Collect some test images: get 10 high-altitude images that do and do not contain apiaries. Create training data (draw boxes). Demo point-and-click code from Robin Kiff. |
 | 1.3 | ML Model Selection: decide which ML model to use in high-altitude filter. May need to test on test images, may need to collect more test images or make new images with rotations and translation of already gathered images. |
 | 1.4 | Setup: build apiary characteristic database, setup unit tests. |
 
@@ -220,3 +229,8 @@ immediately if our change had unexpected consequences.
 
 **Google Earth**: Seems of equal quality, and we already have the 
 point-and-click code to use it over multiple years.
+
+
+## References
+Ren, Yun, Changren Zhu, and Shunping Xiao. “Small Object Detection in Optical Remote Sensing Images via Modified Faster R-CNN.” Applied Sciences 8, no. 5 (2018): 813. https://www.researchgate.net/publication/325268539_Small_Object_Detection_in_Optical_Remote_Sensing_Images_via_Modified_Faster_R-CNN/fulltext/5b02c27f0f7e9be94bda8ed0/Small-Object-Detection-in-Optical-Remote-Sensing-Images-via-Modified-Faster-R-CNN.pdf.
+
