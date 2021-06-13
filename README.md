@@ -231,6 +231,17 @@ immediately if our change had unexpected consequences.
 point-and-click code to use it over multiple years.
 
 
+## Dependencies
+### python moduals
+- tensorflow 2 (see `code_/build_/ml_models/README_ml-models.md` for pip 
+  installation) for machine learning models
+- image_slicer (must use `pip install image_slicer`, not updated on conda) 
+  for cuting up images
+- pathlib (`conda install pathlib`) for Path manipulation
+- pywinauto (`conda install pywinauto`) for window/application manipulation 
+  (for google earth pro)
+
+
 ## References
 Ren, Yun, Changren Zhu, and Shunping Xiao. “Small Object Detection in Optical Remote Sensing Images via Modified Faster R-CNN.” Applied Sciences 8, no. 5 (2018): 813. https://www.researchgate.net/publication/325268539_Small_Object_Detection_in_Optical_Remote_Sensing_Images_via_Modified_Faster_R-CNN/fulltext/5b02c27f0f7e9be94bda8ed0/Small-Object-Detection-in-Optical-Remote-Sensing-Images-via-Modified-Faster-R-CNN.pdf.
 
