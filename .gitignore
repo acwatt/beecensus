@@ -134,3 +134,6 @@ dmypy.json
 # data files
 *.jpg
 *.png
+
+# allow directories
+!./
