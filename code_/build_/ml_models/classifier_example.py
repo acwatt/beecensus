@@ -1,4 +1,4 @@
-# Python 3.9
+# Python 3.7
 # File name: classifier_example.py
 # Description: example of tesnsorflow transfer learning classifier on cats and dogs
 # Authors: Aaron Watt
@@ -416,13 +416,13 @@ if __name__ == "__main__":
 
 # REFERENCES -------------------------
 """
-Transfer learning and fine-tuning tutorial
+Transfer learning and fine-tuning tutorial (this example)
 https://www.tensorflow.org/tutorials/images/transfer_learning
 
 Liscence for the above code (only this script classifier_example.py)
 # MIT License
 #
-# Copyright (c) 2017 François Chollet                                                                                                                    # IGNORE_COPYRIGHT: cleared by OSS licensing
+# Copyright (c) 2017 François Chollet   # IGNORE_COPYRIGHT: cleared by OSS licensing
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
 # copy of this software and associated documentation files (the "Software"),
