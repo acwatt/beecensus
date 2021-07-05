@@ -21,7 +21,7 @@ class Paths:
 
     This will search the current working directory path for the name of the
     repo (beecensus). Since this code is only called from main.py, and main.py
-    is inside the repo, it should always be able to find the beecensus path.
+    is inside the repo, it should be able to find the beecensus path.
     This also means the name of the repo cannot be changed.
     Since this is an inner class, paths will be accessible in the following way:
     Project = ProjectSettings()  # instance of the outer class
@@ -30,10 +30,19 @@ class Paths:
     def __init__(self):
         # add root path of the project / git repo
         self.root = Path(*Path.cwd().parts[:Path.cwd().parts.index('beecensus') + 1])
-        # Add all top-level directory paths as attributes
-        add_subdirectory_paths_as_attributes(self, self.root)
-        # Add all data sub-directory paths too
-        add_subdirectory_paths_as_attributes(self, self.root/'data')
+        # Top-level paths
+        self.code = self.root / 'code_'
+        self.docs = self.root / 'docs'
+        self.models = self.root / 'models'
+        self.output = self.root / 'output'
+        self.paper = self.root / 'paper'
+        # Data directories
+        self.data = self.root / 'data'
+        self.checkpoints = self.data / 'checkpoints'
+        self.configs = self.data / 'configs'
+        self.images = self.data / 'images'
+        self.tables = self.data / 'tables'
+        self.temp = self.data / 'temp'
         # Add the settings file to parse for other paths and settings
         self.settings_file = self.root / 'code_' / 'build_' / 'utils' / 'settings.csv'
 
@@ -43,7 +52,7 @@ class ProjectSettings:
     def __init__(self):
         # Add paths inner class
         self.paths = Paths()
-        # self.add_settings()
+        self.add_settings()
 
     def add_settings(self):
         """For each setting listed in the settings file, add a setting attribute
@@ -56,14 +65,6 @@ class ProjectSettings:
 
 
 # FUNCTIONS --------------------------
-def add_subdirectory_paths_as_attributes(object, parent_directory):
-    """Traverse parent_directory, adding all top-level directory paths as attributes to the object."""
-    for dir in parent_directory.iterdir():
-        if dir.is_dir() and not dir.name.startswith('.'):
-            setattr(object, dir.name, dir)
-    return object
-
-
 # This was used to download the model checkpoints used, but this is not in continuous use
 def download_model_checkpoint(Project: ProjectSettings, model_type='ssd'):
     """Download the checkpoint and put it into data/checkpoints
