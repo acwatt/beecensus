@@ -55,6 +55,10 @@ def download_model_checkpoint(paths: Paths, model_type='ssd'):
 
 
 # MAIN -------------------------------
+# TODO: download models repo from clone_repo in object_detection_test/setup.py
+# TODO: install the models repo with commands from models README
+# TODO: install all conda/pip dependencies with a yaml or requirements txt or just command
+# TODO: download checkpoint that is needed from settings if not present in repo
 
 
 # REFERENCES -------------------------
