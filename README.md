@@ -233,14 +233,140 @@ point-and-click code to use it over multiple years.
 
 ## Dependencies
 ### python moduals
+We can install all the needed dependencies in a virtual conda environment:
+```shell
+conda create --name tf python=3.7
+conda activate tf
+conda install pathlib pywinauto pyqt5-sip libxml2 imageio IPython google-colab dacite
+pip install tensorflow tf-models-official labelImg image_slicer gitpython lvis --user
+```
+If on windows, need to additionally install windows-friendly `pycocotools` library
+```shell
+pip uninstall pycocotools
+pip install pycocotools-windows
+```
+
 - tensorflow 2 (see `code_/build_/ml_models/README_ml-models.md` for pip 
   installation) for machine learning models
+  
 - image_slicer (must use `pip install image_slicer`, not updated on conda) 
   for cuting up images
+  
 - pathlib (`conda install pathlib`) for Path manipulation
+  
 - pywinauto (`conda install pywinauto`) for window/application manipulation 
   (for google earth pro)
+  
+- PyQt5 (`conda install pyqt5-sip`) for matplotlib plots to display.
 
+- xml (`conda install libxml2`) for converting xml files to csv
+
+- imageio (`conda install imageio`)
+
+- IPython (`conda install IPython`)
+
+- google-colab (`conda install google-colab`)
+
+- gitpython (`pip install gitpython`) for cloning git repos
+
+- labelImg (`pip install labelImg`) for creating training data by drawing boxes on 
+  images.
+  
+- lvis (`pip install lvis`) a tools package that tensorflow depends on that 
+  sometimes gets left out of the installation process.
+  
+- dacite (`conda install dacite`) creates data classes (PEP 557) from dictionaries 
+  for use in creating a project config object
+  
+- git clone TensorFlow models git repo (see section below)
+
+
+### TensorFlow Models Git Repository
+This code depends on having the TensorFlow Models repo inside our repo. 
+This repo was cloned into our repo using git bash and the following code. 
+This is written here for documentation purposes. After cloning the 
+`beecensus` repo, you can skip step 1 below and complete steps 2 and 3.
+
+
+1. Clone the TF models repo:
+```
+cd beecensus
+git clone https://github.com/tensorflow/models.git
+```
+
+2. Install protobuf:
+> Go to this page to find the downloadable files for the latest version of Protobuf: https://www.github.com/google/protobuf/releases/latest
+>
+> Download the zip file beginning with protoc for your OS.
+>
+> Extract the zip contents and place the folder somewhere on your 
+> computer (in the program files). E.g., 
+> `D:\Programs\protoc-3.17.3-win64\`
+
+
+3. Install the contained python packages (will install `dll`'s on your 
+   computer, so we need to run this on each new computer after cloning the 
+   beecensus repo to install properly). Make sure to replace 
+   `D:/Programs/protoc-3.17.3-win64/bin/protoc.exe` below with your path to 
+   the `protoc.exe` executable that you just extracted:
+```shell
+cd models/research
+# Compile protos.
+D:/Programs/protoc-3.17.3-win64/bin/protoc.exe object_detection/protos/*.proto --python_out=.
+# Install TensorFlow Object Detection API.
+cp object_detection/packages/tf2/setup.py .
+python -m pip install --use-feature=2020-resolver .
+# Test the installation.
+python object_detection/builders/model_builder_tf2_test.py
+```
+At the end of the test, you should see some output like this indicating 
+that all the tests passed (no need to read through all the tests unless 
+you're curious):
+```shell
+Ran 24 tests in 28.470s
+
+OK (skipped=1) # this indicates that there were no failed tests
+```
+
+Note: there will be many CUDA errors while using TF (the first one I see 
+during the test is 
+`'cudart64_110.dll'; dlerror`). We can safely ignore these CUDA errors as 
+the note after the first error explains: "Ignore above cudart dlerror if you 
+do not have a GPU set up on your machine." This GPU/CUDA errors will appear but
+do not affect the running of TF when using CPU instead of GPU.
+
+### Changes made to TensorFlow scripts
+- to run the main program (`model_main_tf2.py`) and model-saving program 
+  (`exporter_main_v2.py`) from outside the models directory, I 
+  needed to add the models/research directory to the python path. Since 
+  `model_main_tf2.py` and `exporter_main_v2.py` are called necessarily using the 
+  command line, I needed to edit 
+  the path from inside `model_main_tf2.py` and `exporter_main_v2.py`; I added the following to the imports 
+  *before* importing object_detection:
+  ```python
+  import sys
+  from pathlib import Path
+  research_dir = Path(sys.path[0]).parent
+  sys.path.insert(0, str(research_dir))
+  ```
+
+# Initial Setup Procedure
+- Install Anaconda 3 (includes python 3)
+  - create virtual env beecensus python=3.7
+  - conda install [dependencies]
+  - pip install [dependencies]
+- Install PyCharm
+  - open repo as project
+  - set beecensus as project interpreter  
+- setup git repo
+  - install git
+  - SSH key, add to your account
+  - clone beecensus repo
+  - activate models subrepo using protoc from TF section above
+- Google Earth Pro
+
+
+1. Install 
 
 ## References
 Ren, Yun, Changren Zhu, and Shunping Xiao. “Small Object Detection in Optical Remote Sensing Images via Modified Faster R-CNN.” Applied Sciences 8, no. 5 (2018): 813. https://www.researchgate.net/publication/325268539_Small_Object_Detection_in_Optical_Remote_Sensing_Images_via_Modified_Faster_R-CNN/fulltext/5b02c27f0f7e9be94bda8ed0/Small-Object-Detection-in-Optical-Remote-Sensing-Images-via-Modified-Faster-R-CNN.pdf.
