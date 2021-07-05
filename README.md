@@ -1,117 +1,28 @@
 # Honey Bee ML Census Project
-*Note*: there are many tools we will be using in this project
-(python, Anaconda, PyCharm, GitHub, Amazing Web Services servers, 
-etc.) so it may take some practice to get proficient. Once we set up
-the basics with GitHub and PyCharm together, we will mostly be
-focusing on writing the code and getting familiar with the GitHub 
-tools. 
 
-## First Steps:
-1. Read about [object detection](https://www.datacamp.com/community/tutorials/object-detection-guide).
-   
-1. Finish reading through this document.
-   
-1. Skim [Ryan Kellogg's RA manual](https://github.com/kelloggrk/Kellogg_RA_Manual/wiki/Overview)
-   (focus on the Project Management section).
-   
-1. If you haven't used Git before, read [this article](https://www.freecodecamp.org/news/learn-the-basics-of-git-in-under-10-minutes-da548267cc91/)
-   or something similar. Make a practice repo and try commiting, pushing, 
-   pulling, and branching. PyCharm makes it easier to do these, but you 
-   should understand how these basic commands work.
-   
-1. - install [Anaconda](https://www.anaconda.com/products/individual#Downloads)
-   - Install [PyCharm community version](https://www.jetbrains.com/pycharm/download/#section=windows)
-   - create a GitHub account if needed and send Aaron the username so he 
-     can add you as a collaborator on the repository
-   
-1. Schedule time with Aaron to set up PyCharm and review GitHub repo.
-   
+Package Name: beecensus
 
-## Background
-### Project Background
-Having good estimates of the the distribution of managed honey bees
-in the United States is both intrinsically important to biologists
-and also serves as an important input to other analyses. Current
-estimates are expensive to administer and may have large unknown
-sampling error because they rely on voluntary response. We wish to
-verify these estimates by creating a US census of honey bee boxes
-using free or low-cost satellite imagery and machine learning tools.
+Version: 0.1
 
-### Goals
-- Build a dataset of honey bee box locations and apiary
-  characteristics for the US using satellite imagery and several
-  machine learning tools.
-  
-- Use the dataset to estimate statistics of the apiary and
-  box distributions (e.g., county and state estimates).
+Package Description: (1) Train several machine learning neural networks to 
+identify managed honey bee boxes from satellite images. Then, given a geographical 
+area, (2) search satellite images of that area to build a dataset of bee box locations, 
+then (3) calculate characteristics of the groups of boxes and aggreate statistics 
+for the geographical area.
 
-### Organization
-Borrowing ideas from [Ryan Kellogg's RA manual](https://github.com/kelloggrk/Kellogg_RA_Manual/wiki/Overview):
-1. *End-to-end production*: we want to be able to reproduce 
-   _everything_ we do by rerunning one script. During
-   development, we may want to save intermediate data steps to
-   increase speed, but we should always be able to go back and
-   run everything from scratch.
-   
-1. *Replicable and shareable code*: We can share the code with
-   others who ask about it using GitHub. Replication, however,
-   means more than just giving people access to the GitHub repo
-   and letting them look over the code. Replicability means 
-   meaningful documentation. This will happen mainly in 
-   comments inside of code and in README.md files inside some
-   directories.
+Setup/installation procedure: see `INSTALL.md`
 
-1. *Unambiguous process*: Keeping GitHub issues up to date 
-   and folders free of half-finished or legacy files.
+Directory structure: see `docs/package_organization.md`
 
-### GitHub & PyCharm
-We will use GitHub issues to keep track of tasks (as layed out
-in Kellogg's RA Manual) and branching, commits, and comments on 
-commits to communicate. This may sound like a lot to learn but
-it speeds up communication and production in major ways. Within code,
-we can use `TODO:` comments to leave ourselves notes on what is left
-to do in a specific script.
+Liscense: See the liscence statement at the bottom of `code_/main.py`
 
-**Atomic commits**: A single commit should only contain a small change (e.g.
-, "updated log in `this_function` to save more information about the 
-process"). Do not mix different tasks into the same commit because it will 
-cause issues if one of those tasks and not the other needs to be reverted. 
-You can make edits to multiple parts of the code and PyCharm can help you 
-choose which edits you would like to commit. It's easiest though to focus 
-on one task at a time if possible and commit the edits when that task is 
-complete.
-
-### Python Programming Standards
-When possible, we'll try to follow the [PEP-8 python style guide](https://pep8.org/).
-PEP-8 offers a way to make sure our code is reasonably
-formatted to allow other python programmers to read our code.
-Some main style points:
-- try to stick to the 79-character limit in code -- it makes
-  reading the code much easier.
-  
-- document your code often using comments and docstrings. To start,
-  write a docstring for every function. It can be just one sentence
-  if it's obvious what the function does or a long description
-  of inputs and outputs and typical results for more complicated
-  functions / classes. See the [PEP-8 section on commenting](https://pep8.org/#comments)
-  for tips on in-line comments.
+For steps on contributing to the project: see `docs/contributing.md`
 
 
-## Tools being used
-- python
-  - TensorFlow library for machine learning models (some new, some already 
-    trained).
-  - Geopandas for converting geographical shape files into list of latitude 
-    and longitude coordinates for downloading images.
-  - [Code written by Robin Kiff](https://bitbucket.org/demandlinkdevelopment/beehunter/src/master/)
-    to download images from google earth at all available dates for that
-    location
-    
-- barcode code written by [name] to add covariate barcodes to images. This 
-  adds a barcode version of the time, location, geography, etc. to allow 
-  the ojbect identification
+# Project Pipeline
 
-## Application Procedure
+
+## Application Pipeline
 1. Select geographic boundaries (latitude and longitude) of area to search. 
    We can do this by saving the boundaries of all counties and states in 
    files and selecting which counties and/or states to search.
@@ -158,7 +69,7 @@ Some main style points:
    
 1. Save bee box and apiary characteristics to database.
 
-![3 CNN process](assets/images/3CNN-process.png)
+![3 CNN process](output/figures/diagrams/3CNN-process.png)
 
 ## Programming Outline
 Phase 1: Using as few images as possible, build entire 
