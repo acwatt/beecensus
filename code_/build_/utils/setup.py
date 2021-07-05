@@ -47,6 +47,15 @@ class Paths:
         self.settings_file = self.root / 'code_' / 'build_' / 'utils' / 'settings.csv'
 
 
+class GIS:
+    """Class to hold settings for gis portion of project."""
+    def __init__(self):
+        # County to be save
+        self.geographical_name = 'Philadelphia County, PA'
+
+
+
+
 class ProjectSettings:
     """Project class with settings from settings file and useful project paths."""
     def __init__(self):
