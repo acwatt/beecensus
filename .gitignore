@@ -118,7 +118,7 @@ dmypy.json
 # data files
 *.jpg
 *.png
-data/*
+data/
 
 # allow directories
 !./
